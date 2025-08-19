@@ -147,8 +147,8 @@ function HomePage() {
       <ToastContainer />
       <TaskSearchBar searchKey={searchKey} setSearchKey={setSearchKey} />
       {isAddBtnClicked ? (
-  <div className="p-4 bg-white shadow-lg rounded-xl w-full max-w-4xl mx-auto">
-    <AddTaskForm onSubmitAddTask={handleAddTask} />
+  <div className="p-4 bg-white shadow-lg rounded-xl w-full max-w-5xl mx-auto">
+    <AddTaskForm onSubmitAddTask={handleAddTask} setAddBtnClicked={setAddBtnClicked} />
   </div>
 ) : (
   <div className="flex justify-center items-center py-8">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function AddTaskForm({ onSubmitAddTask }) {
+function AddTaskForm({ onSubmitAddTask,setAddBtnClicked }) {
   const [taskForm, setTaskForm] = useState({
     taskname: "",
     deadline: "",
@@ -17,7 +17,7 @@ function AddTaskForm({ onSubmitAddTask }) {
 
   return (
     <div className="rounded-xl p-4 max-w-4xl mx-auto mt-6">
-      <div className="flex flex-col md:flex-row gap-4 items-center">
+      <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
         {/* Task Name */}
         <input
           name="taskname"
@@ -52,9 +52,15 @@ function AddTaskForm({ onSubmitAddTask }) {
         {/* Add Button */}
         <button
           onClick={() => onSubmitAddTask(taskForm)}
-          className="bg-indigo-500 text-white px-5 py-2 rounded-lg hover:bg-indigo-600 transition"
+          className="flex-shrink-0 bg-indigo-500 text-white px-5 py-2 rounded-lg hover:bg-indigo-600 transition"
         >
           Add Task
+        </button>
+        <button
+          onClick={() => setAddBtnClicked(false)}
+          className="flex-shrink-0 bg-yellow-500 text-white px-5 py-2 rounded-lg hover:bg-indigo-600 transition"
+        >
+          Cancel
         </button>
       </div>
     </div>
